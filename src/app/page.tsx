@@ -157,7 +157,7 @@ function Banner() {
           {/* Phase 4 — CTAs */}
           <motion.div
             style={{ opacity: p4, y: p4y }}
-            className="pointer-events-auto absolute bottom-[12vh] left-6 md:left-16"
+            className="pointer-events-auto absolute bottom-[12vh] left-6 md:left-16 pb-6"
           >
             <div className="text-[10px] text-white/35 tracking-[0.6em] uppercase mb-6">
               // Ready to ship
