@@ -156,24 +156,25 @@ export default function BugEasterEgg() {
       {/* ── Warning button ── */}
       <motion.button
         onClick={stage === "idle" ? activate : undefined}
-        className={`pointer-events-auto group flex items-center gap-2.5 rounded-full border px-5 py-2.5 text-[11px] font-mono uppercase tracking-[0.25em] backdrop-blur transition-all duration-300 select-none ${
+        className={`pointer-events-auto group flex max-w-[calc(100vw-2rem)] items-center justify-center gap-2 rounded-full border text-center text-[10px] font-mono uppercase leading-snug tracking-[0.16em] backdrop-blur transition-all duration-300 select-none sm:max-w-none sm:gap-2.5 sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.25em] ${
           stage === "idle"
-            ? "border-amber-500/30 bg-amber-400/5 text-amber-400/70 hover:border-amber-400/60 hover:bg-amber-400/10 hover:text-amber-300 cursor-pointer"
+            ? "p-3 sm:px-5 sm:py-2.5 border-amber-500/30 bg-amber-400/5 text-amber-400/70 hover:border-amber-400/60 hover:bg-amber-400/10 hover:text-amber-300 cursor-pointer"
             : stage === "hunting"
-            ? "border-red-500/40 bg-red-400/8 text-red-400/80 cursor-default animate-pulse"
-            : "border-green-500/40 bg-green-400/8 text-green-400/80 cursor-default"
+            ? "px-4 py-2 sm:px-5 sm:py-2.5 border-red-500/40 bg-red-400/8 text-red-400/80 cursor-default animate-pulse"
+            : "px-4 py-2 sm:px-5 sm:py-2.5 border-green-500/40 bg-green-400/8 text-green-400/80 cursor-default"
         }`}
       >
         {stage === "idle" && (
           <>
-            <span className="animate-pulse">⚠️</span>
-            <span>Don't touch — there's a bug on this site</span>
+            <span className="animate-pulse text-sm sm:text-base">⚠️</span>
+            <span className="hidden sm:inline">Don't touch — there's a bug on this site</span>
           </>
         )}
         {stage === "hunting" && (
           <>
-            <span>🐛</span>
-            <span>Click on them to squish the bugs!</span>
+            <span className="text-sm sm:text-base">🐛</span>
+            <span className="hidden sm:inline">Click on them to squish the bugs!</span>
+            <span className="sm:hidden">Squish them!</span>
             <span className="ml-1 text-white/20">
               ({bugs.filter((b) => b.alive).length} left)
             </span>
@@ -181,7 +182,7 @@ export default function BugEasterEgg() {
         )}
         {stage === "won" && (
           <>
-            <span>✅</span>
+            <span className="text-sm sm:text-base">✅</span>
             <span>All bugs squished!</span>
           </>
         )}

@@ -186,7 +186,7 @@ function Banner() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="pointer-events-auto absolute bottom-[12vh] right-6 md:right-16"
+          className="pointer-events-auto absolute top-24 right-4 md:top-auto md:bottom-[12vh] md:right-16"
         >
           <BugEasterEgg />
         </motion.div>
